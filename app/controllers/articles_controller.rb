@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  http_basic_authenticate_with name: "root", password: "The2ndAmendment!", except: [:index, :show]
+  
   def index
     @articles = Article.all
   end
